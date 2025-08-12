@@ -8,7 +8,7 @@ terraform {
     required_providers {
     aws = {
         source = "hashicorp/aws"
-        version = "~>4.0"
+        version = "~>3.0"
      }
     }
 } 
@@ -16,15 +16,15 @@ terraform {
 
 provider "aws" {
     region = "ap-south-1"
-    access_key = "AKIA6FTJR3YKQMWVHLTO"
-    secret_key = "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"
+    access_key = "AKIA6FTJR3YKRXBKOMGV"
+    secret_key = "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"
 }
 
 
-resource "aws_instance" "my_server1" {
-  ami                  = "ami-0b09627181c8d5778"
+resource "aws_instance" "my_server7" {
+  ami                  = "ami-0144277607031eca2"
   instance_type        = "t2.micro"
-  key_name             = "mumbaikey"
+  key_name             = "nwmumbaikey"
   availability_zone    = "ap-south-1b"
   hibernation          = true
 
@@ -60,7 +60,7 @@ resource "aws_instance" "my_server1" {
     
 
 output "aws_attributes" {
-    value = aws_instance.my_server1
+    value = aws_instance.my_server7
 
 }
 
