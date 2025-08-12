@@ -53,7 +53,7 @@ resource "aws_instance" "my_server7" {
       sudo sleep 120 ;
       sudo ssh-keygen -R  $(self.public_ip);
 
-      sudo ANSIBLE_HOST_KEY_CHECKING=false ansible-playbook -i $(self.public_ip),playbook.yaml -u ec2-user--private-key /home/ec2-user/keys/mumbaikey
+      sudo ANSIBLE_HOST_KEY_CHECKING=false ansible-playbook -i $(self.public_ip),playbook.yaml -u ec2-user--private-key /home/ec2-user/keys/nwmumbaikey
     EOT
   }
 }
