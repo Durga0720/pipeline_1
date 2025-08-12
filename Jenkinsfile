@@ -17,26 +17,26 @@ pipeline {
 
         stage ('Terraform Init') {
             steps {
-                sh 'sudo terraform init'
+                sh 'terraform init'
             }
         }
     
 
         stage ('Terraform plan') {
             steps {
-                sh 'sudo terraform plan -out=tfplan'
+                sh 'terraform plan -out=tfplan'
             }
         }
 
         stage('Terraform Apply') {
             steps {
-                sh 'sudo terraform apply -auto-approve tfplan'
+                sh 'terraform apply -auto-approve tfplan'
             }
         }
 
         stage('Verification') {
             steps {
-                sh 'sudo aws ec2 describe-instances --region ap-south-1'
+                sh 'aws ec2 describe-instances --region ap-south-1'
 
             }
         }
